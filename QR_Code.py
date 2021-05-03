@@ -29,9 +29,6 @@ def qr_code_generate():
     format()
 
 def qr_code_read():
-    print("The scanned result will be available in the same folder as this file with the name 'qrcode_result.txt'")
-    print("If a green square/rectangle appears around the code, it has been scanned.")
-    time.sleep(10)
     def read_barcodes(frame):
         barcodes = pyzbar.decode(frame)
         for barcode in barcodes:
@@ -46,6 +43,9 @@ def qr_code_read():
         return frame
 
     def main():
+        print("The scanned result will be available in the same folder as this file with the name 'qrcode_result.txt'")
+        print("If a green square/rectangle appears around the code, it has been scanned.")
+        time.sleep(10)
         try:
             camera = cv2.VideoCapture(0)
 
