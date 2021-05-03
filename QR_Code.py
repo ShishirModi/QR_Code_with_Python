@@ -51,16 +51,18 @@ def qr_code_read():
         
         time.sleep(10)
         try:    
-            try:
-                camera = cv2.VideoCapture(0)
-
-            except:
-                camera = cv2.VideoCapture(1)
+            camera = cv2.VideoCapture(0)
+            
         except:
-            print("")
-            print("There was a problem accessing your camera, please try again")
-            print("Exiting now...")
-            exit()
+            try:
+                camera = cv2.VideoCapture(1)
+                
+            except:
+                print("")
+                print("There was a problem accessing your camera, please try again")
+                print("Exiting now...")
+                time.sleep(10)
+                exit()
             
         ret, frame = camera.read()
         while ret:
