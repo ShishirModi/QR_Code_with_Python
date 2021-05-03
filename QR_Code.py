@@ -43,15 +43,25 @@ def qr_code_read():
         return frame
 
     def main():
+        print("")
         print("The scanned result will be available in the same folder as this file with the name 'qrcode_result.txt'")
         print("If a green square/rectangle appears around the code, it has been scanned.")
+        print("Exit the program by pressing 'Esc' or 'Escape' key.")
+        print("")
+        
         time.sleep(10)
-        try:
-            camera = cv2.VideoCapture(0)
+        try:    
+            try:
+                camera = cv2.VideoCapture(0)
 
+            except:
+                camera = cv2.VideoCapture(1)
         except:
-            camera = cv2.VideoCapture(1)
-
+            print("")
+            print("There was a problem accessing your camera, please try again")
+            print("Exiting now...")
+            exit()
+            
         ret, frame = camera.read()
         while ret:
             ret, frame = camera.read()
