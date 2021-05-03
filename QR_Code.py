@@ -72,7 +72,7 @@ def start():
         qr_code_generate()
 
     elif 'b' in choice or 'B' in choice or 'read' in choice or 'READ' in choice:
-        qr_code_read
+        qr_code_read()
 
     else:
         print("Invalid input")
