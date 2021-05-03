@@ -1,6 +1,7 @@
 import pyqrcode
 import cv2
 from pyzbar import pyzbar
+import pypng
 
 def qr_code_generate():
     print("What should the QR Code contain?")
