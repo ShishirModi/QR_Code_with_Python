@@ -1,6 +1,7 @@
 import pyqrcode
 import cv2
 from pyzbar import pyzbar
+import time
 
 def qr_code_generate():
     print("What should the QR Code contain?")
@@ -28,6 +29,9 @@ def qr_code_generate():
     format()
 
 def qr_code_read():
+    print("The scanned result will be available in the same folder as this file with the name 'qrcode_result.txt'")
+    print("If a green square/rectangle appears around the code, it has been scanned.")
+    time.sleep(10)
     def read_barcodes(frame):
         barcodes = pyzbar.decode(frame)
         for barcode in barcodes:
