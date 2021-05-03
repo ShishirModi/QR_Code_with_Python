@@ -1,0 +1,5 @@
+pyqrcode
+opencv-python
+pyzbar
+pyzbar[scripts]
+pypng
