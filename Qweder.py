@@ -48,22 +48,20 @@ def qr_code_read():
         print("If a green square/rectangle appears around the code, it has been scanned.")
         print("Exit the program by pressing 'Esc' or 'Escape' key.")
         print("")
-        
         time.sleep(10)
-        try:    
-            camera = cv2.VideoCapture(0)
-            
-        except:
-            try:
-                camera = cv2.VideoCapture(1)
-                
-            except:
+
+        camera = cv2.VideoCapture(0)
+        success, frame = camera.read()
+        if not success:
+            camera = cv2.VideoCapture(1)
+            success, frame = camera.read()
+            if not success:
                 print("")
                 print("There was a problem accessing your camera, please try again")
                 print("Exiting now...")
                 time.sleep(10)
                 exit()
-            
+
         ret, frame = camera.read()
         while ret:
             ret, frame = camera.read()
