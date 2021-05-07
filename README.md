@@ -1,3 +1,3 @@
-# QR_Code_with_Python
+# Qweeder
 
 A QR code generator, scanner made with Python
