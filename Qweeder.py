@@ -38,8 +38,8 @@ def qr_code_read():
             
             font = cv2.FONT_HERSHEY_DUPLEX
             cv2.putText(frame, barcode_info, (x + 6, y - 6), font, 2.0, (255, 255, 255), 1)
-            with open("barcode_result.txt", mode ='w') as file:
-                file.write("Recognized Barcode:" + barcode_info)
+            with open("qrcode_result.txt", mode ='w') as file:
+                file.write("Recognized QR code: " + barcode_info)
         return frame
 
     def main():
